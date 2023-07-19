@@ -1,0 +1,115 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Hotel - TIEN ANH CAPUCHINO</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/images/Logo_PRN211.png" type="image/png" />
+    <!-- Scrollbar Custom CSS -->
+    @*<link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">*@
+</head>
+<!-- body -->
+<body class="main-layout">
+    <!-- loader  -->
+    @*<div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>*@
+    <!-- end loader -->
+    <!-- header -->
+    @await Html.PartialAsync("Header")
+
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Change Your Password</h1>
+                                    </div>
+                                    <form class="user" action="/Employee/DoChangePass" method="POST">
+                                        <input type="hidden" name="go" value="ChangeForm" />
+                                        <div class="form-group">
+                                            <input name="PassNow" type="password" required class="form-control form-control-user"
+                                                   value="@ViewBag.oldPa"
+                                                   id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your current password...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input value="@ViewBag.newPa" required name="passNew" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Your new password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input value="@ViewBag.rePa" required name="re_pass" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Your new password">
+                                        </div>
+                                        <input class="btn btn-primary btn-user btn-block" type="submit" name="submit" value="Submit" />
+                                    </form>
+                                    @if (ViewBag.err is not null)
+                                    {
+                                        <div class="alert alert-danger" role="alert">
+                                            @ViewBag.err
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about" class="about">
+        <div class="container-fluid">
+            <div class="row d_flex">
+                <div class="col-md-6">
+                    <div class="about_text">
+                        <div class="titlepage">
+                            <h2>About Our Hotel</h2>
+                            <p>The hotel was established in 2022 based on the project of the subject PRN211. The hotel is operated by only 1 member. However, the service quality is still among the top in Vietnam. The number of rooms is constantly updated to meet your needs. Room quality is also upgraded over time. Enjoy the excellent service of our hotel. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_img">
+                        <figure><img src="~/images/about_img.jpg" alt="#" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("Footer")
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/custom.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,8 @@
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.csproj.AssemblyReference.cache
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.GeneratedMSBuildEditorConfig.editorconfig
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.AssemblyInfoInputs.cache
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.AssemblyInfo.cs
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.csproj.CoreCompileInputs.cache
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.MvcApplicationPartsAssemblyInfo.cache
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.RazorAssemblyInfo.cache
+D:\SE5\PRN291\Project_PRN211-master\Project_PRN211-master\Project_PRN211\obj\Release\net6.0\Project_PRN211.RazorAssemblyInfo.cs

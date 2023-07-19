@@ -1,0 +1,146 @@
+﻿@using Project_PRN211.Models;
+@model List<RoomTY>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Hotel - TIEN ANH CAPUCHINO</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- fevicon -->
+    <link rel="icon" href="~/images/Logo_PRN211.png" type="image/png" />
+    <!-- Scrollbar Custom CSS -->
+    @*<link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">*@
+</head>
+<!-- body -->
+<body class="main-layout">
+    <!-- loader  -->
+    @*<div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>*@
+    <!-- end loader -->
+    <!-- header -->
+    @await Html.PartialAsync("Header")
+    @*<div class="">
+        <div class="row d_flex" id="generalContent">
+        </div>
+    </div>*@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1"></label>
+                    <form action="/Home/searchStatus" method="post">
+                        <select name="para1" class="form-control" onchange="this.form.submit()" id="exampleFormControlSelect1">
+                            <option value="2">All status</option>
+                            <option value="0" @(ViewBag.Sta == 0 ? "selected" : "")>Empty</option>
+                            <option value="1" @(ViewBag.Sta == 1 ? "selected" : "")>Not Empty</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">RoomNo</th>
+                    <th scope="col">Price/day</th>
+                    <th scope="col">Person/room</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (RoomTY ro in @Model)
+                {
+                    <tr>
+                        <td>
+                            @if (ro.Status == 1)
+                            {
+                                <a class="text text-info" href="/Guest/InfoGuest/@ro.RoomNo"><strong>Room @ro.RoomNo</strong></a>
+                            } else
+                            {
+                                <a class="text text-info" href="/Guest/AddGuest/@ro.RoomNo"><strong>Room @ro.RoomNo</strong></a>
+                            }
+                        </td>
+                        <td>@(string.Format("{0:#,0}", ro.RoomPrice)) VND</td>
+                        <td>@ro.NumberOfPersons</td>
+                        <td>
+                            @if (@ro.Status == 1)
+                            {
+                                <p class="text text-danger">Not Empty</p>
+                            }
+                            else
+                            {
+                                <p class="text text-success">Empty</p>
+                            }
+                        </td>
+                        <td>
+                            @if (ro.Status == 1)
+                            {
+                                <a href="/Guest/InfoGuest/@ro.RoomNo">
+                                    <span class="material-symbols-outlined">
+                                        info
+                                    </span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="/Guest/AddGuest/@ro.RoomNo">
+                                    <span class="material-symbols-outlined">
+                                        add_circle
+                                    </span>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="about" class="about">
+        <div class="container-fluid">
+            <div class="row d_flex">
+                <div class="col-md-6">
+                    <div class="about_text">
+                        <div class="titlepage">
+                            <h2>About Our Hotel</h2>
+                            <p>The hotel was established in 2022 based on the project of the subject PRN211. The hotel is operated by only 1 member. However, the service quality is still among the top in Vietnam. The number of rooms is constantly updated to meet your needs. Room quality is also upgraded over time. Enjoy the excellent service of our hotel. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_img">
+                        <figure><img src="~/images/about_img.jpg" alt="#" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("Footer")
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
