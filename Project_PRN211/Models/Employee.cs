@@ -16,21 +16,5 @@ namespace Project_PRN211.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public decimal? Salary { get; set; }
-
-        public Employee()
-        {
-        }
-
-        public Employee(string username, string password)
-        {
-            Username = username;
-            Password = password;
-        }
-
-        public override string ToString()
-        {
-            return $"{Username}";
-        }
     }
-
 }

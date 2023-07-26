@@ -52,7 +52,7 @@ namespace Project_PRN211.Controllers
                 UserManager use = new UserManager();
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
                 List<Employee> lstEM = new List<Employee>();
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     em = context.Employees.FirstOrDefault(x => x.Id == em.Id);
                     lstEM = context.Employees.Where(x => x.Id != e.Id).ToList();
@@ -122,7 +122,7 @@ namespace Project_PRN211.Controllers
             else
             {
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     em = context.Employees.FirstOrDefault(x => x.Id == em.Id);
                     

@@ -81,7 +81,7 @@ namespace Project_PRN211.Controllers
                     lstro = us.searchStatus(para1);
                 }
                 e = JsonConvert.DeserializeObject<Employee>(jsonStr);
-                ViewBag.Users = e;
+                ViewBag.Users = e.FullName;
                 //ViewBag.ListSearch = lstro;
                 ViewBag.Sta = para1;
                 return View("/Views/Home/Admin.cshtml", lstro);

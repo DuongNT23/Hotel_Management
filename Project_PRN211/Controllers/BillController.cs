@@ -31,7 +31,7 @@ namespace Project_PRN211.Controllers
             else
             {
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     context.RoomTypes.ToList();
                     context.Guests.ToList();
@@ -67,7 +67,7 @@ namespace Project_PRN211.Controllers
                     context.SaveChanges();
                 }
                 
-                using (var conte = new SE1619_Project_HotelContext())
+                using (var conte = new Project_HotelContext())
                 {
                     g.DepartureDate = DateTime.Now;
                     conte.Guests.Update(g);
@@ -106,7 +106,7 @@ namespace Project_PRN211.Controllers
             else
             {
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     context.RoomTypes.ToList();
                     gu = context.Guests.FirstOrDefault(x => x.RoomNo == para1 && x.Status == 1);
@@ -126,7 +126,7 @@ namespace Project_PRN211.Controllers
                 }
                 us.updateBill(b);
                 us.deactivateRom(para1);
-                using (var conten = new SE1619_Project_HotelContext())
+                using (var conten = new Project_HotelContext())
                 {
                     gu.Status = 0;
                     ro.Status = 0;

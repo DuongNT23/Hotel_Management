@@ -8,10 +8,10 @@ namespace Project_PRN211.Logic
 {
     public class UserManager
     {
-        SE1619_Project_HotelContext context;
+        Project_HotelContext context;
         public UserManager()
         {
-            context = new SE1619_Project_HotelContext();
+            context = new Project_HotelContext();
         }
         public Employee logged(string username, string password)
         {

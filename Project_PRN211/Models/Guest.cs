@@ -24,23 +24,6 @@ namespace Project_PRN211.Models
         public DateTime? DepartureDate { get; set; }
         public int? Status { get; set; }
 
-        public Guest(short? roomNo, string fullName, DateTime? dob, bool? gender, string phoneNo, string email, string address, DateTime? arrivalDate, DateTime? departureDate, int? status)
-        {
-            RoomNo = roomNo;
-            FullName = fullName;
-            Dob = dob;
-            Gender = gender;
-            PhoneNo = phoneNo;
-            Email = email;
-            Address = address;
-            ArrivalDate = arrivalDate;
-            DepartureDate = departureDate;
-            Status = status;
-        }
-        public override string ToString()
-        {
-            return $"{GuestId} - {FullName} - {Gender} - {Email} - {Dob} - {PhoneNo}";
-        }
         public virtual Room RoomNoNavigation { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
     }

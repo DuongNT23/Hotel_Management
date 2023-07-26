@@ -28,7 +28,7 @@ namespace Project_PRN211.Controllers
             else
             {
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     context.Guests.ToList();
                     lstGu = context.Guests.Where(x => x.RoomNo == para1).ToList();
@@ -61,7 +61,7 @@ namespace Project_PRN211.Controllers
             else
             {
                 em = JsonConvert.DeserializeObject<Employee>(jsonstr);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     context.Guests.ToList();
                     lstGu = context.Guests.Where(x => x.GuestId != g.GuestId).ToList();
@@ -138,7 +138,7 @@ namespace Project_PRN211.Controllers
                 }
                 Bill b = new Bill();
                 use.addGuest(gu, ro1);
-                using (var context = new SE1619_Project_HotelContext())
+                using (var context = new Project_HotelContext())
                 {
                     b.GuestId = gu.GuestId;
                     b.Status = 0;
